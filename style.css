@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIÁVEL DE COR ❤️ */
+:root {
+  --vermelho: #b11226;
+}
+
+body {
+  background: black;
+  font-family: Poppins, sans-serif;
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* FADE */
+.fade {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.fade.show {
+  opacity: 1;
+}
+
+/* CORAÇÕES */
+.coracoes span {
+  position: fixed;
+  bottom: -10px;
+  color: red;
+  animation: subir 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes subir {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* CARTA */
+.carta-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.envelope {
+  width: 260px;
+  height: 180px;
+  background: var(--vermelho);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.texto-fechado {
+  z-index: 2;
+}
+
+/* PAPEL */
+.papel {
+  position: absolute;
+  bottom: -100%;
+  width: 90%;
+  height: 85%;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  padding: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  overflow: hidden; /* 🔴 impede vazar */
+  transition: bottom 0.8s ease;
+}
+
+.papel p {
+  max-height: 100%;
+  overflow-y: auto;       /* 🔴 cria scroll se precisar */
+  padding-right: 4px;     /* evita cortar scrollbar */
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+
+.envelope.aberta .papel {
+  bottom: 5%;
+}
+
+.envelope.aberta .texto-fechado {
+  display: none;
+}
+
+/* BOTÃO */
+button {
+  padding: 10px 22px;
+  background: var(--vermelho);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+button.mostrar {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* MÚSICA */
+.musica-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.disco {
+  width: 200px;
+  cursor: pointer;
+}
+
+.girando {
+  animation: girar 3s linear infinite;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.mensagem-musica {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 80%;
+}
+/* ===== PÁGINA DA MÚSICA ===== */
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+.music-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.music-container h1 {
+  color: #b11226;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.music-text {
+  max-width: 300px;
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+/* DISCO */
+
+.disc-container {
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+}
+
+.disc {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* animação de giro */
+.playing {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* fade */
+.fade-in {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

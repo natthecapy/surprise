@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Uma música pra você</title>
+
+  <!-- Fonte Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="fade-in">
+
+  <div class="music-container">
+
+    <h1>Essa música é pra você ❤️</h1>
+
+    <!-- DISCO -->
+    <div class="disc-container" onclick="toggleMusic()">
+      <img src="disco.png"  class="disc">
+    </div>
+
+    <p class="music-text">
+      <!-- SUA MENSAGEM AQUI -->
+      Toda vez que eu escuto essa música, penso em você. Não me lembro se você conhece ou gosta, mas lembro que dia 1 de Junho você me disse que eu ia te ensinar a gostar de muita coisa, espero que essa múscica seja uma delas. 
+      Com todo amor, Natália
+    </p>
+
+    <audio id="music">
+      <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
